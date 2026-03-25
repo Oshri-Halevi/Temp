@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submitted Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f3f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .box {
+      background: white;
+      width: 420px;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .row {
+      margin: 14px 0;
+      font-size: 16px;
+    }
+
+    .label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Submitted Data</h2>
+    <div class="row"><span class="label">Email:</span> <span id="email"></span></div>
+    <div class="row"><span class="label">Password:</span> <span id="password"></span></div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('email').textContent = params.get('email') || '';
+    document.getElementById('password').textContent = params.get('password') || '';
+  </script>
+</body>
+</html>
